@@ -268,7 +268,7 @@ func (m *Manager) setCookie(sessionID string, w http.ResponseWriter, r *http.Req
 			Value:    cookieValue,
 			Path:     "/",
 			HttpOnly: true,
-			Secure:   m.isSecure(r),
+			Secure:   m.opts.secure,
 			Domain:   m.opts.domain,
 			SameSite: m.opts.sameSite,
 		}
